@@ -7,19 +7,20 @@ function Perfil()
 
     useEffect(() => {
 
-        let user = "octocat";
+        let user = "Brunomv06";
         async function search()
         {
             const response = await fetch(`https://api.github.com/users/${user}`)
             const data = await response.json();
             setDados(data);
+            console.log(data);
         }
 
         search();
     }, []);
 
-    if(!dados.name) return console.log("Carregando...");
-
+    //if(!dados.name) return console.log("Carregando...");
+    if(!dados.login) return <>Carregando...</>;
     console.log(dados);
 
     return(
