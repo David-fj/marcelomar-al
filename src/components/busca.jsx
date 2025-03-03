@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Buscar ({valueInput, handleChange}) 
+export function Buscar ({value, onChange}) 
 {
     return(
         <>        
@@ -9,8 +9,8 @@ export function Buscar ({valueInput, handleChange})
       <input
         id="meuInput"
         type="text"
-        onChange={handleChange}
-        value={valueInput}
+        onChange={onChange}
+        value={value}
       />
     </div>
         </>

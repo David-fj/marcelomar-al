@@ -1,12 +1,11 @@
 import React from "react";
 
-export function Button({ clickChange }){
+export function Button({ onClick }){
 
-    console.log("Butão");
     return(
 <>
         <div>
-            <button type="button" onClick={clickChange}>Clique aqui!</button>
+            <button onClick={onClick}>Clique aqui!</button>
         </div>
 </>
     );

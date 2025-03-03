@@ -1,25 +1,24 @@
 import React, {useState ,useEffect} from "react";
 
-function Perfil({user})
+function Perfil({ value })
 {
     const [dados, setDados] = useState([]);
-    console.log("@>>", user);
+    
     useEffect(() => {
-
         async function search()
         {
-            const response = await fetch(`https://api.github.com/users/${user}`)
+            const response = await fetch(`https://api.github.com/users/${value}`)
             const data = await response.json();
             setDados(data);
-            console.log(data);
+            //console.log(data);
         }
 
         search();
-    }, []);
+    }, [value]);
 
     //if(!dados.name) return console.log("Carregando...");
     if(!dados.login) return <>Carregando...</>;
-    console.log(dados);
+    //console.log(dados);
     
     return(
         <>

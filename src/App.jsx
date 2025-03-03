@@ -10,27 +10,30 @@ import './App.css'
 function App() {
 
   const [valorInput, setValorInput] = useState('');
-
+  const [perfil, setPerfil] = useState('Octocat');
   const handleChange = (event) => 
-    {
+  {
         setValorInput(event.target.value);
-    };
+  };
 
-    const clickChange = () =>
-    {
-      console.log("Entrou no onClick");
-        return(
-          <>
-            <Perfil value={valorInput}/>
-          </>
-        );
-    }
+  const clickChange = () =>
+  {
+    setPerfil(valorInput);
+  };
 
   return (
     <>
-      <h1>DevFinder</h1>
+      <header>
+        <h1>DevFinder</h1>
+        <div>
+          <img src="./public/moon.svg" alt="" />
+          <span>DARK</span>
+        </div>
+      </header>
+
       <Buscar value={valorInput} onChange={handleChange}/>
       <Button onClick={clickChange}/>
+      <Perfil value={perfil}/>
     </>
   )
 }
