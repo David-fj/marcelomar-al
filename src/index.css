@@ -19,3 +19,8 @@
   --darkcolor3: rgb(20, 29, 47);
   --darkcolor4: rgb(30, 42, 71);
 }
+
+body {
+  background-color: var(--lightcolor5);
+  height: 100vh;
+}

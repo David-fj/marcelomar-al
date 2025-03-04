@@ -5,7 +5,7 @@ export function Button({ onClick }){
     return(
 <>
         <div>
-            <button onClick={onClick}>Clique aqui!</button>
+            <button onClick={onClick}>Search</button>
         </div>
 </>
     );

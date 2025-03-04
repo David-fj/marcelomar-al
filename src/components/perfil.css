@@ -1,0 +1,41 @@
+:root {
+    --lightcolor1: rgb(0, 121, 255);
+    --lightcolor2: rgb(105, 124, 154);
+    --lightcolor3: rgb(75, 106, 155);
+    --lightcolor4: rgb(43, 52, 66);
+    --lightcolor5: rgb(246, 248, 255);
+    --lightcolor6: rgb(254, 254, 254);
+  
+    --darkcolor1: rgb(0, 121, 255);
+    --darkcolor2: rgb(255, 255, 255);
+    --darkcolor3: rgb(20, 29, 47);
+    --darkcolor4: rgb(30, 42, 71);
+  }
+
+.containerPerfil {
+    width: 45.625rem;
+    height: 27.75rem;
+    display: flex;
+    border-radius: 0.9375rem;
+    background: white;
+    box-shadow: 0 1rem 1.875rem #4660BB33;
+    padding: 2.625rem;
+}
+
+.containerPerfil div {
+    margin: 0 0 0 1.425rem;
+}
+
+.headerPerfil {
+    display: flex;
+}
+
+.imagemPerfil {
+    border-radius: 50%;
+    width: 7.3125rem;
+    height: 7.3125rem;
+}
+
+.containerInfo {
+    display: flex;
+}

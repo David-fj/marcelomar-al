@@ -22,7 +22,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className="AppContainer">
       <header>
         <h1>DevFinder</h1>
         <div>
@@ -31,10 +31,13 @@ function App() {
         </div>
       </header>
 
-      <Buscar value={valorInput} onChange={handleChange}/>
-      <Button onClick={clickChange}/>
+      <div className="containerSearch">
+        <img src="./public/Combined Shape.svg" alt="" />
+        <Buscar value={valorInput} onChange={handleChange}/>
+        <Button onClick={clickChange}/>
+      </div>
       <Perfil value={perfil}/>
-    </>
+    </div>
   )
 }
 
