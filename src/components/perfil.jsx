@@ -4,7 +4,10 @@ import "./perfil.css"
 function Perfil({ value })
 {
     const [dados, setDados] = useState([]);
-    
+    const meses = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    let ano = '';
+    let mes = '';
+    let dia = '';
     useEffect(() => {
         async function search()
         {
@@ -19,21 +22,30 @@ function Perfil({ value })
 
     //if(!dados.name) return console.log("Carregando...");
     if(!dados.login) return <>Carregando...</>;
-    //console.log(dados);
-    console.log(dados);
+    //console.log(dados.bio);
+    for(let i = 0; i < 10; i++)
+    {
+        if(i < 4)
+            ano += dados.created_at[i];
+        else if(i > 4 && i < 7)
+            mes += dados.created_at[i];
+        else if(i > 7)
+            dia += dados.created_at[i];
+    }
     return(
         <>
             <div className="containerPerfil">
                 <img src={dados.avatar_url} className="imagemPerfil" />
-                <div>
+                <div className="containerMain">
                 <div className="headerPerfil">
-                    
+                    <div className="header">
                     <div>
-                        <div>{dados.name}</div>
-                        <div>@{dados.login}</div>
+                        <div className="name">{dados.name}</div>
+                        <div className="login">@{dados.login}</div>
                     </div>
-                    <div>{dados.bio}</div>
-                    <div>{dados.created_at}</div>
+                    <div className="joined">Joined {dia} {meses[parseInt(mes)-1]} {ano}</div>
+                    </div>
+                    <div className="bio">{dados.bio ? dados.bio : "This profile has no bio"}</div>
                 </div>
                 <div className="containerInfo">
                     <div>
@@ -62,7 +74,7 @@ function Perfil({ value })
                     </div>
                     <div>
                         <img src="./public/002-url.svg" alt="" />
-                        <div>{dados.blog}</div>
+                        <a href={dados.blog} target="_blank"><div>{dados.blog}</div></a>
                     </div>
                     <div>
                         <img src="./public/001-office-building.svg" alt="" />
