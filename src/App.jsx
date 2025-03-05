@@ -32,8 +32,10 @@ function App() {
       </header>
 
       <div className="containerSearch">
+        <div>
         <img src="./public/Combined Shape.svg" alt="" />
         <Buscar value={valorInput} onChange={handleChange}/>
+        </div>
         <Button onClick={clickChange}/>
       </div>
       <Perfil value={perfil}/>

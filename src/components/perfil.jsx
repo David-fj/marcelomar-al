@@ -3,6 +3,13 @@ import "./perfil.css"
 
 function Perfil({ value })
 {
+    function limit(arr)
+    {
+        let str = "";
+        for(let i = 0; i < 24;i++)
+            str += arr[i];
+        return str;
+    }
     const [dados, setDados] = useState([]);
     const meses = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     let ano = '';
@@ -32,6 +39,11 @@ function Perfil({ value })
         else if(i > 7)
             dia += dados.created_at[i];
     }
+    let str = "";
+    if(dados.blog.length > 24)
+        str = limit(dados.blog);
+    else
+        str = dados.blog;
     return(
         <>
             <div className="containerPerfil">
@@ -74,11 +86,11 @@ function Perfil({ value })
                     </div>
                     <div>
                         <img src="./public/002-url.svg" alt="" />
-                        <a href={dados.blog} target="_blank"><div>{dados.blog}</div></a>
+                        <a href={dados.blog} target={dados.blog ? "_blank" : ''}><div>{dados.blog ? str : "Not Available"}</div></a>
                     </div>
                     <div>
                         <img src="./public/001-office-building.svg" alt="" />
-                        <div>{dados.company}</div>
+                        <div>{dados.company ? dados.company : "Not Available"}</div>
                     </div>
                 </div>
                 </div>
