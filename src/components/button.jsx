@@ -1,6 +1,7 @@
 import React from "react";
+import "./button.css";
 
-export function Button({ onClick }){
+export function Button({ onClick}){
 
     return(
 <>

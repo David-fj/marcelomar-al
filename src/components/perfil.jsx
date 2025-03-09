@@ -1,7 +1,7 @@
 import React, {useState ,useEffect} from "react";
 import "./perfil.css"
 
-function Perfil({ value })
+function Perfil({ value, busca })
 {
     function limit(arr)
     {
@@ -18,17 +18,17 @@ function Perfil({ value })
     useEffect(() => {
         async function search()
         {
-            const response = await fetch(`https://api.github.com/users/${value}`)
-            const data = await response.json();
-            setDados(data);
-            //console.log(data);
+            const aux = await busca(value);
+            if(!aux == 0)
+            {
+                setDados(aux);
+            }
         }
-
         search();
     }, [value]);
 
     //if(!dados.name) return console.log("Carregando...");
-    if(!dados.login) return <>Carregando...</>;
+    if(!dados.login) return <><img src="./public/spin.svg" alt="" /></>;
     //console.log(dados.bio);
     for(let i = 0; i < 10; i++)
     {
@@ -78,7 +78,7 @@ function Perfil({ value })
                 <div className="containerLinks">
                     <div>
                         <img src="./public/003-pin.svg" alt="" />
-                        <div>{dados.location}</div>
+                        <div>{dados.location ? dados.location : "Not Available"}</div>
                     </div>
                     <div>
                         <img src="./public/004-twitter.svg" alt="" />

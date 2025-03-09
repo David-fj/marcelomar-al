@@ -1,4 +1,5 @@
 import React from 'react';
+import './busca.css';
 
 export function Buscar ({value, onChange}) 
 {
@@ -10,7 +11,7 @@ export function Buscar ({value, onChange})
         type="text"
         onChange={onChange}
         value={value}
-        placeholder='Search GitHub username'
+        placeholder='Search GitHub username...'
       />
     </div>
         </>

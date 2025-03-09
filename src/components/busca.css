@@ -1,0 +1,12 @@
+input {
+    margin: 0 1.625rem;
+    width: 22rem;
+    outline: none;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--lightcolor3);
+}
+
+input:focus {
+    color: var(--lightcolor4);
+}

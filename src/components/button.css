@@ -1,0 +1,15 @@
+button {
+    width: 6.625rem;
+    height: 3.125rem;
+    background-color: var(--lightcolor1);
+    border-radius: 0.625rem;
+    color: var(--lightcolor6);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover {
+    background: #60ABFF;
+}
