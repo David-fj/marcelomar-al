@@ -32,7 +32,16 @@
 }
 
 .darkBack {
-  background: var(--darkcolor3);
+  background: var(--darkcolor3) !important;
+}
+
+.darkBack2 {
+  background: var(--darkcolor4) !important;
+  box-shadow: none !important;
+}
+
+.darkText {
+  color: white !important;
 }
 
 .AppContainer {
@@ -98,4 +107,15 @@
 
 .results {
   display: none;
+}
+
+@media (max-width: 735px)
+{
+  .AppContainer header {
+    width: 20.4375rem;
+  }
+
+  .containerSearch {
+    width: 20.4375rem;
+  }
 }

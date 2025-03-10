@@ -53,20 +53,20 @@ function App() {
   return (
     <div className={cor? "AppContainer" : "AppContainer darkBack"}>
       <header>
-        <h1 className={cor? "": "darkCor"} >devfinder</h1>
+        <h1 className={cor? "": "darkText"} >devfinder</h1>
         <TrocaCor corChange={corChange} cor={cor}/>
       </header>
-      <div className="containerSearch">
+      <div className={cor?"containerSearch" : "darkBack2 containerSearch"}>
         <div>
         <img src="./public/Combined Shape.svg" alt="" />
-        <Buscar value={valorInput} onChange={handleChange}/>
+        <Buscar value={valorInput} onChange={handleChange} cor={cor}/>
         </div>
         <div>
           <span className={busca ? "results" : "noResults"}>No results</span>
           <Button onClick={clickChange}/>
         </div>
       </div>
-      <Perfil value={perfil} busca={search}/>
+      <Perfil value={perfil} busca={search} cor={cor}/>
     </div>
   )
 }

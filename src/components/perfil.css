@@ -14,7 +14,6 @@
 
 .containerPerfil {
     width: 45.625rem;
-    height: 27.75rem;
     display: flex;
     border-radius: 0.9375rem;
     background: white;
@@ -123,4 +122,8 @@
 
 .containerLinks div a {
     text-decoration: underline;
+}
+
+.darkText2 {
+    color: var(--lightcolor2);
 }

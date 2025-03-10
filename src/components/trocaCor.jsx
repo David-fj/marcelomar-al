@@ -18,7 +18,7 @@ function TrocaCor( {corChange, cor} )
 <>
 <div className="containerTrocaCor" onClick={corChange}>
           <img src="./public/002-sun.svg" alt="" />
-          <span>LIGHT</span>
+          <span className="darkText">LIGHT</span>
         </div>
 </>
     );

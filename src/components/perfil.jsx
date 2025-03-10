@@ -1,7 +1,7 @@
 import React, {useState ,useEffect} from "react";
 import "./perfil.css"
 
-function Perfil({ value, busca })
+function Perfil({ value, busca, cor })
 {
     function limit(arr)
     {
@@ -46,51 +46,51 @@ function Perfil({ value, busca })
         str = dados.blog;
     return(
         <>
-            <div className="containerPerfil">
+            <div className={cor? "containerPerfil" : "containerPerfil darkBack2"}>
                 <img src={dados.avatar_url} className="imagemPerfil" />
                 <div className="containerMain">
                 <div className="headerPerfil">
                     <div className="header">
                     <div>
-                        <div className="name">{dados.name}</div>
+                        <div className={cor? "name": "name darkText"}>{dados.name}</div>
                         <div className="login">@{dados.login}</div>
                     </div>
-                    <div className="joined">Joined {dia} {meses[parseInt(mes)-1]} {ano}</div>
+                    <div className={cor? "joined" : "joined darkText"}>Joined {dia} {meses[parseInt(mes)-1]} {ano}</div>
                     </div>
-                    <div className="bio">{dados.bio ? dados.bio : "This profile has no bio"}</div>
+                    <div className={cor? "bio" : "bio darkText"}>{dados.bio ? dados.bio : "This profile has no bio"}</div>
                 </div>
-                <div className="containerInfo">
+                <div className={cor? "containerInfo" : "containerInfo darkBack"}>
                     <div>
-                        <span>Repos</span>
-                        <div>{dados.public_repos}</div>
+                        <span className={cor? "" : "darkText"}>Repos</span>
+                        <div className={cor? "" : "darkText"}>{dados.public_repos}</div>
                     </div>
 
                     <div>
-                        <span>Followers</span>
-                        <div>{dados.followers}</div>
+                        <span className={cor? "" : "darkText"}>Followers</span>
+                        <div className={cor? "" : "darkText"}>{dados.followers}</div>
                     </div>
                     <div>
-                        <span>Following</span>
-                        <div>{dados.following}</div>
+                        <span className={cor? "" : "darkText"}>Following</span>
+                        <div className={cor? "" : "darkText"}>{dados.following}</div>
                     </div>
                 </div>
 
                 <div className="containerLinks">
                     <div>
-                        <img src="./public/003-pin.svg" alt="" />
-                        <div>{dados.location ? dados.location : "Not Available"}</div>
+                        <img src={cor? "./public/003-pin.svg" : "./public/003-pinD.svg"} alt="" />
+                        <div className={cor? "" : "darkText"}>{dados.location ? dados.location : "Not Available"}</div>
                     </div>
                     <div>
                         <img src="./public/004-twitter.svg" alt="" />
-                        <div>{dados.twitter_username ? dados.twitter_username : "Not Available"}</div>
+                        <div className={cor? "" : "darkText2"}>{dados.twitter_username ? dados.twitter_username : "Not Available"}</div>
                     </div>
                     <div>
-                        <img src="./public/002-url.svg" alt="" />
-                        <a href={dados.blog} target={dados.blog ? "_blank" : ''}><div>{dados.blog ? str : "Not Available"}</div></a>
+                        <img src={cor? "./public/002-url.svg" : "./public/002-urlD.svg"} alt="" />
+                        <a href={dados.blog} target={dados.blog ? "_blank" : ''}><div className={cor? "" : "darkText"}>{dados.blog ? str : "Not Available"}</div></a>
                     </div>
                     <div>
-                        <img src="./public/001-office-building.svg" alt="" />
-                        <div>{dados.company ? dados.company : "Not Available"}</div>
+                        <img src={cor? "./public/001-office-building.svg" : "./public/001-office-buildingD.svg"} alt="" />
+                        <div className={cor? "" : "darkText"}>{dados.company ? dados.company : "Not Available"}</div>
                     </div>
                 </div>
                 </div>

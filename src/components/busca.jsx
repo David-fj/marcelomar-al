@@ -1,7 +1,7 @@
 import React from 'react';
 import './busca.css';
 
-export function Buscar ({value, onChange}) 
+export function Buscar ({value, onChange, cor}) 
 {
     return(
         <>        
@@ -12,6 +12,7 @@ export function Buscar ({value, onChange})
         onChange={onChange}
         value={value}
         placeholder='Search GitHub username...'
+        className={cor? "": "darkText"}
       />
     </div>
         </>
